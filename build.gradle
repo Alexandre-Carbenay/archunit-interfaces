@@ -1,0 +1,23 @@
+plugins {
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1'
+sourceCompatibility = 11
+
+repositories {
+	mavenCentral()
+}
+
+def archUnitVersion = '0.13.1'
+
+dependencies {
+	testImplementation('org.junit.jupiter:junit-jupiter:5.6.2')
+	testCompile("com.tngtech.archunit:archunit-junit5-api:${archUnitVersion}")
+	testRuntime("com.tngtech.archunit:archunit-junit5-engine:${archUnitVersion}")
+}
+
+test {
+	useJUnitPlatform()
+}
